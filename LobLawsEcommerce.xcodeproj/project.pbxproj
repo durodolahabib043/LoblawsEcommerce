@@ -11,6 +11,9 @@
 		82DA970C25B0BDC700011C42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DA970B25B0BDC700011C42 /* ViewController.swift */; };
 		82DA971125B0BDCE00011C42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82DA971025B0BDCE00011C42 /* Assets.xcassets */; };
 		82DA971425B0BDCE00011C42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82DA971225B0BDCE00011C42 /* LaunchScreen.storyboard */; };
+		82DA972425B1140800011C42 /* LobLawsProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DA972325B1140800011C42 /* LobLawsProduct.swift */; };
+		82DA972A25B114E400011C42 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DA972925B114E400011C42 /* ApiClient.swift */; };
+		82DA972F25B1163D00011C42 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DA972E25B1163D00011C42 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		82DA971025B0BDCE00011C42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82DA971325B0BDCE00011C42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		82DA971525B0BDCE00011C42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82DA972325B1140800011C42 /* LobLawsProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobLawsProduct.swift; sourceTree = "<group>"; };
+		82DA972925B114E400011C42 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		82DA972E25B1163D00011C42 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,13 +58,56 @@
 		82DA970625B0BDC700011C42 /* LobLawsEcommerce */ = {
 			isa = PBXGroup;
 			children = (
+				82DA972D25B1151C00011C42 /* Helper */,
+				82DA972825B114A600011C42 /* ApiManager */,
+				82DA972725B1141E00011C42 /* ModelView */,
+				82DA972625B1141400011C42 /* View */,
+				82DA972225B113E700011C42 /* Model */,
 				82DA970725B0BDC700011C42 /* AppDelegate.swift */,
-				82DA970B25B0BDC700011C42 /* ViewController.swift */,
 				82DA971025B0BDCE00011C42 /* Assets.xcassets */,
 				82DA971225B0BDCE00011C42 /* LaunchScreen.storyboard */,
 				82DA971525B0BDCE00011C42 /* Info.plist */,
 			);
 			path = LobLawsEcommerce;
+			sourceTree = "<group>";
+		};
+		82DA972225B113E700011C42 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				82DA972325B1140800011C42 /* LobLawsProduct.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		82DA972625B1141400011C42 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82DA970B25B0BDC700011C42 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82DA972725B1141E00011C42 /* ModelView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelView;
+			sourceTree = "<group>";
+		};
+		82DA972825B114A600011C42 /* ApiManager */ = {
+			isa = PBXGroup;
+			children = (
+				82DA972925B114E400011C42 /* ApiClient.swift */,
+			);
+			path = ApiManager;
+			sourceTree = "<group>";
+		};
+		82DA972D25B1151C00011C42 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				82DA972E25B1163D00011C42 /* Constant.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,7 +180,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				82DA970C25B0BDC700011C42 /* ViewController.swift in Sources */,
+				82DA972425B1140800011C42 /* LobLawsProduct.swift in Sources */,
+				82DA972F25B1163D00011C42 /* Constant.swift in Sources */,
 				82DA970825B0BDC700011C42 /* AppDelegate.swift in Sources */,
+				82DA972A25B114E400011C42 /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
