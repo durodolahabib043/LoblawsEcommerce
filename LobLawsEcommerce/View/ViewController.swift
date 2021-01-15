@@ -11,6 +11,7 @@ class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSo
 
     let cellId = "productCellId"
     let tableView = UITableView()
+    var productList: [Entry] = []
     override func loadView() {
         super.loadView()
     }
@@ -20,10 +21,18 @@ class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSo
         view.backgroundColor = .white
         setupNavTitle()
         setupTableView()
-        //        let apiClient = ApiClient()
-        //        apiClient.fetchCart(inputJson: "") { (entry, test) in
-        //            print("This is sample entry \(entry[0].name)")
-        //        }
+        let apiClient = ApiClient()
+        apiClient.fetchCart(inputJson: "") { (entry, test) in
+            print("This is sample entry \(entry[0].name)")
+            self.productList = entry
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.rowHeight = 100
+        tableView.estimatedRowHeight = 600
     }
 
     fileprivate func setupNavTitle(){
@@ -33,7 +42,7 @@ class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSo
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(ProductCell.self, forCellReuseIdentifier: cellId)
         setupAutoLayout()
     }
 
@@ -43,15 +52,14 @@ class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSo
 extension ViewController  {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return productList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        cell.textLabel?.text = "sample"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ProductCell
+        cell.loblowsProduct = productList[indexPath.row]
         return cell
     }
-
 
     func setupAutoLayout(){
         var constraints = [NSLayoutConstraint]()
