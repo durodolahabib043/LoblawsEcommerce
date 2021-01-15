@@ -23,7 +23,6 @@ class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSo
         setupTableView()
         let apiClient = ApiClient()
         apiClient.fetchCart(inputJson: "") { (entry, test) in
-            print("This is sample entry \(entry[0].name)")
             self.productList = entry
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -58,7 +57,14 @@ extension ViewController  {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ProductCell
         cell.loblowsProduct = productList[indexPath.row]
+        cell.selectionStyle = .none
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let productDetailVC = ProductDetailController()
+        productDetailVC.entry = productList[indexPath.row]
+        self.navigationController?.pushViewController(productDetailVC, animated: true)
     }
 
     func setupAutoLayout(){
