@@ -7,11 +7,25 @@
 
 import UIKit
 
-class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSource  {
+class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSource, UISearchBarDelegate {
 
     let cellId = "productCellId"
+    let headerId = "headerId"
     let tableView = UITableView()
     var productList: [Entry] = []
+
+    lazy var searchBar : UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.searchBarStyle = UISearchBar.Style.prominent
+        searchBar.placeholder = " Search..."
+        searchBar.sizeToFit()
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.isTranslucent = false
+        searchBar.backgroundImage = UIImage()
+        searchBar.delegate = self
+        return searchBar
+    }()
+
     override func loadView() {
         super.loadView()
     }
@@ -39,6 +53,7 @@ class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSo
     }
     func setupTableView(){
         view.addSubview(tableView)
+        view.addSubview(searchBar)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(ProductCell.self, forCellReuseIdentifier: cellId)
@@ -67,15 +82,20 @@ extension ViewController  {
         self.navigationController?.pushViewController(productDetailVC, animated: true)
     }
 
+
     func setupAutoLayout(){
         var constraints = [NSLayoutConstraint]()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         //MARK:- tableView
         constraints += [NSLayoutConstraint.init(item: tableView, attribute: .leading, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .leading, multiplier: 1.0, constant: 0.0)]
         constraints += [NSLayoutConstraint.init(item: tableView, attribute: .trailing, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .trailing, multiplier: 1.0, constant: 0.0)]
-        constraints += [NSLayoutConstraint.init(item: tableView, attribute: .top, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .top, multiplier: 1.0, constant: 0.0)]
+        constraints += [NSLayoutConstraint.init(item: tableView, attribute: .top, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .top, multiplier: 1.0, constant: 60.0)]
         constraints += [NSLayoutConstraint.init(item: tableView, attribute: .bottom, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .bottom, multiplier: 1.0, constant: 0.0)]
 
+
+        constraints += [NSLayoutConstraint.init(item: searchBar, attribute: .leading, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .leading, multiplier: 1.0, constant: 0.0)]
+        constraints += [NSLayoutConstraint.init(item: searchBar, attribute: .trailing, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .trailing, multiplier: 1.0, constant: 0.0)]
+        constraints += [NSLayoutConstraint.init(item: searchBar, attribute: .top, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .top, multiplier: 1.0, constant: 0.0)]
         view.addConstraints(constraints)
     }
 
