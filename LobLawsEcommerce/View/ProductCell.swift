@@ -73,7 +73,7 @@ class ProductCell: UICollectionViewCell {
 
         constraints += [NSLayoutConstraint.init(item: fullStackView, attribute: .top, relatedBy: .equal, toItem: safeArea, attribute: .top, multiplier: 1.0, constant: 10.0)]
 
-        constraints += [NSLayoutConstraint.init(item: productImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 150.0)]
+        constraints += [NSLayoutConstraint.init(item: productImage, attribute: .height, relatedBy: .equal, toItem: safeArea, attribute: .height, multiplier: 1/2, constant: 0.0)]
 
         addConstraints(constraints)
 

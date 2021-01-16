@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		822DBDFF25B31FC700D84D36 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822DBDFE25B31FC700D84D36 /* Extensions.swift */; };
 		827281CB25B13BD600117BC2 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827281CA25B13BD500117BC2 /* ProductCell.swift */; };
 		827281CE25B155BB00117BC2 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827281CD25B155BB00117BC2 /* CustomImageView.swift */; };
 		82A973AD25B206AD00D3B4C2 /* ProductDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A973AC25B206AD00D3B4C2 /* ProductDetailController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		822DBDFE25B31FC700D84D36 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		827281CA25B13BD500117BC2 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		827281CD25B155BB00117BC2 /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		82A973AC25B206AD00D3B4C2 /* ProductDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				82DA972E25B1163D00011C42 /* Constant.swift */,
 				827281CD25B155BB00117BC2 /* CustomImageView.swift */,
+				822DBDFE25B31FC700D84D36 /* Extensions.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82A973AD25B206AD00D3B4C2 /* ProductDetailController.swift in Sources */,
+				822DBDFF25B31FC700D84D36 /* Extensions.swift in Sources */,
 				82DA970C25B0BDC700011C42 /* ViewController.swift in Sources */,
 				82DA972425B1140800011C42 /* LobLawsProduct.swift in Sources */,
 				82DA972F25B1163D00011C42 /* Constant.swift in Sources */,

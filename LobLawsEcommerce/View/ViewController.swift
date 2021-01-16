@@ -10,9 +10,7 @@ import UIKit
 class ViewController: UICollectionViewController {
 
     let cellId = "productCellId"
-    let headerId = "headerId"
     var productList: [Entry] = []
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +41,19 @@ class ViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ProductCell
-        cell.loblowsProduct = productList[indexPath.row]
+        cell.loblowsProduct = productList[indexPath.item]
+        if (indexPath.row == 1) {
+
+            let font = UIFont.boldSystemFont(ofSize: 22)
+            let attributes = [NSAttributedString.Key.font: font , NSAttributedString.Key.foregroundColor : UIColor.red]
+
+            let attributedProductName = NSAttributedString(string: "$2.99 ", attributes: attributes)
+            let strikeOutText = NSMutableAttributedString()
+            strikeOutText.append(attributedProductName)
+            strikeOutText.append(productList[indexPath.row].price.strikeThrough())
+
+            cell.productPrice.attributedText = strikeOutText
+        }
         return cell
     }
 
