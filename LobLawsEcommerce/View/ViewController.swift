@@ -7,97 +7,71 @@
 
 import UIKit
 
-class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSource, UISearchBarDelegate {
+class ViewController: UICollectionViewController {
 
     let cellId = "productCellId"
     let headerId = "headerId"
-    let tableView = UITableView()
     var productList: [Entry] = []
 
-    lazy var searchBar : UISearchBar = {
-        let searchBar = UISearchBar()
-        searchBar.searchBarStyle = UISearchBar.Style.prominent
-        searchBar.placeholder = " Search..."
-        searchBar.sizeToFit()
-        searchBar.translatesAutoresizingMaskIntoConstraints = false
-        searchBar.isTranslucent = false
-        searchBar.backgroundImage = UIImage()
-        searchBar.delegate = self
-        return searchBar
-    }()
 
-    override func loadView() {
-        super.loadView()
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = .white
-        setupNavTitle()
-        setupTableView()
         let apiClient = ApiClient()
         apiClient.fetchCart(inputJson: "") { (entry, test) in
             self.productList = entry
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                self.collectionView.reloadData()
             }
         }
+        setupNaviagtionTitle()
     }
-    override func viewWillAppear(_ animated: Bool) {
-        tableView.rowHeight = 100
-        tableView.estimatedRowHeight = 600
-    }
-
-    fileprivate func setupNavTitle(){
+    //MARK:- NAV
+    func setupNaviagtionTitle(){
+        
         navigationItem.title = "Products"
-    }
-    func setupTableView(){
-        view.addSubview(tableView)
-        view.addSubview(searchBar)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(ProductCell.self, forCellReuseIdentifier: cellId)
-        setupAutoLayout()
+        collectionView.alwaysBounceVertical = true
+        collectionView.backgroundColor = .white
+        collectionView.register(ProductCell.self, forCellWithReuseIdentifier: cellId)
     }
 
-
-}
-
-extension ViewController  {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    //MARK: - COLLECTION DELEGATE
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return productList.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ProductCell
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ProductCell
         cell.loblowsProduct = productList[indexPath.row]
-        cell.selectionStyle = .none
         return cell
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let productDetailVC = ProductDetailController()
-        productDetailVC.entry = productList[indexPath.row]
-        self.navigationController?.pushViewController(productDetailVC, animated: true)
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        self.collectionView.collectionViewLayout.invalidateLayout()
+
+        super.viewWillTransition(to: size, with: coordinator)
     }
 
-
-    func setupAutoLayout(){
-        var constraints = [NSLayoutConstraint]()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        //MARK:- tableView
-        constraints += [NSLayoutConstraint.init(item: tableView, attribute: .leading, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .leading, multiplier: 1.0, constant: 0.0)]
-        constraints += [NSLayoutConstraint.init(item: tableView, attribute: .trailing, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .trailing, multiplier: 1.0, constant: 0.0)]
-        constraints += [NSLayoutConstraint.init(item: tableView, attribute: .top, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .top, multiplier: 1.0, constant: 60.0)]
-        constraints += [NSLayoutConstraint.init(item: tableView, attribute: .bottom, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .bottom, multiplier: 1.0, constant: 0.0)]
-
-
-        constraints += [NSLayoutConstraint.init(item: searchBar, attribute: .leading, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .leading, multiplier: 1.0, constant: 0.0)]
-        constraints += [NSLayoutConstraint.init(item: searchBar, attribute: .trailing, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .trailing, multiplier: 1.0, constant: 0.0)]
-        constraints += [NSLayoutConstraint.init(item: searchBar, attribute: .top, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .top, multiplier: 1.0, constant: 0.0)]
-        view.addConstraints(constraints)
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let productDetailVC = ProductDetailController()
+        productDetailVC.entry = productList[indexPath.item]
+        self.navigationController?.pushViewController(productDetailVC, animated: true)
     }
 
 }
 
+extension ViewController : UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (view.frame.width/2)-20, height: view.frame.height/3)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 1, left: 10, bottom: 1, right: 10)
+    }
+
+}

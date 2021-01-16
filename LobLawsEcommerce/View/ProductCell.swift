@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProductCell: UITableViewCell {
+class ProductCell: UICollectionViewCell {
 
     var safeArea: UILayoutGuide!
 
@@ -28,16 +28,14 @@ class ProductCell: UITableViewCell {
     }()
     let productPrice : UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textAlignment = .right
+        label.font = UIFont.boldSystemFont(ofSize: 18.0)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .purple
         return label
     }()
 
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setupView()
     }
 
@@ -54,34 +52,40 @@ class ProductCell: UITableViewCell {
     }
 
     func addAutolayout(){
+        addBorder()
         var constraints = [NSLayoutConstraint]()
         let containerView: [UIView] = [productImage,productName,productPrice]
 
         let fullStackView = UIStackView.init(arrangedSubviews: containerView)
-        fullStackView.axis = .horizontal
+        fullStackView.axis = .vertical
         fullStackView.alignment = .fill
         fullStackView.distribution = .fill
+
         fullStackView.translatesAutoresizingMaskIntoConstraints = false
 
         addSubview(fullStackView)
         safeArea = safeAreaLayoutGuide
 
         // MARK:- fullStackView
-        constraints += [NSLayoutConstraint.init(item: fullStackView, attribute: .leading, relatedBy: .equal, toItem: safeArea, attribute: .leading, multiplier: 1.0, constant: 0.0)]
+        constraints += [NSLayoutConstraint.init(item: fullStackView, attribute: .leading, relatedBy: .equal, toItem: safeArea, attribute: .leading, multiplier: 1.0, constant: 10.0)]
         // trailing fullStackView
-        constraints += [NSLayoutConstraint.init(item: fullStackView, attribute: .trailing, relatedBy: .equal, toItem: safeArea, attribute: .trailing, multiplier: 1.0, constant: -5.0)]
+        constraints += [NSLayoutConstraint.init(item: fullStackView, attribute: .trailing, relatedBy: .equal, toItem: safeArea, attribute: .trailing, multiplier: 1.0, constant: 0.0)]
 
-        constraints += [NSLayoutConstraint.init(item: fullStackView, attribute: .centerY, relatedBy: .equal, toItem: safeArea, attribute: .centerY, multiplier: 1.0, constant: 0.0)]
+        constraints += [NSLayoutConstraint.init(item: fullStackView, attribute: .top, relatedBy: .equal, toItem: safeArea, attribute: .top, multiplier: 1.0, constant: 10.0)]
 
-
-        constraints += [NSLayoutConstraint.init(item: productImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 64.0)]
-        constraints += [NSLayoutConstraint.init(item: productImage, attribute: .width, relatedBy: .equal, toItem: productImage, attribute: .height, multiplier: 1.0, constant: 30.0)]
-        constraints += [NSLayoutConstraint.init(item: productPrice, attribute: .width, relatedBy: .equal, toItem: safeArea, attribute: .width, multiplier: 1/4, constant: 0.0)]
+        constraints += [NSLayoutConstraint.init(item: productImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 150.0)]
 
         addConstraints(constraints)
 
     }
 
+    func addBorder(){
+        layer.masksToBounds = true
+        layer.cornerRadius = 5
+        layer.borderWidth = 1
+        let borderColor: UIColor =  .lightGray
+        layer.borderColor = borderColor.cgColor
+    }
 
     var loblowsProduct : Entry? {
         didSet {
@@ -91,18 +95,18 @@ class ProductCell: UITableViewCell {
 
             productImage.loadImageUsingUrlString(urlString: products.image)
             setProductNameType(product: products.name, productType: products.type)
-            productPrice.text = "\(products.price)  >"
+            productPrice.text = "\(products.price)"
         }
     }
 
     func setProductNameType(product: String , productType: String){
-        let quote = "Product Name: \(product)"
-        let font = UIFont.systemFont(ofSize: 12)
-        let attributes = [NSAttributedString.Key.font: font , NSAttributedString.Key.foregroundColor : UIColor.blue]
+        let quote = "\(product)"
+        let font = UIFont.boldSystemFont(ofSize: 16)
+        let attributes = [NSAttributedString.Key.font: font]
 
         let attributedProductName = NSAttributedString(string: quote, attributes: attributes)
-        let attributedProductType = NSAttributedString(string: "\nProduct Type: \(productType)", attributes: [NSAttributedString.Key.foregroundColor : UIColor.red
-            , NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)])
+        let attributedProductType = NSAttributedString(string: "\n\(productType)", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray
+            , NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20)])
         let combination = NSMutableAttributedString()
         combination.append(attributedProductName)
         combination.append(attributedProductType)

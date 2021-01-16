@@ -16,7 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         windows = UIWindow()
         windows?.makeKeyAndVisible()
-        windows?.rootViewController = UINavigationController(rootViewController: ViewController())
+
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+
+        windows?.rootViewController = UINavigationController(rootViewController: ViewController(collectionViewLayout: layout))
         return true
     }
 
