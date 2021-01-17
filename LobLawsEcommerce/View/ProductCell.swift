@@ -94,25 +94,9 @@ class ProductCell: UICollectionViewCell {
             }
 
             productImage.loadImageUsingUrlString(urlString: products.image)
-            setProductNameType(product: products.name, productType: products.type)
+            productName.attributedText = NSMutableAttributedString().setProductNameType(product: products.name, productType: products.type)
             productPrice.text = "\(products.price)"
         }
     }
-
-    func setProductNameType(product: String , productType: String){
-        let quote = "\(product)"
-        let font = UIFont.boldSystemFont(ofSize: 16)
-        let attributes = [NSAttributedString.Key.font: font]
-
-        let attributedProductName = NSAttributedString(string: quote, attributes: attributes)
-        let attributedProductType = NSAttributedString(string: "\n\(productType)", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray
-            , NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20)])
-        let combination = NSMutableAttributedString()
-        combination.append(attributedProductName)
-        combination.append(attributedProductType)
-
-        productName.attributedText = combination
-    }
-
 
 }

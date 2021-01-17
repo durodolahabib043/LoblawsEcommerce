@@ -17,7 +17,13 @@ class ViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
         view.backgroundColor = .white
         let apiClient = ApiClient()
-        apiClient.fetchCart(inputJson: "") { (entry, test) in
+        apiClient.fetchCart(inputJson: "") { (entry, err) in
+            if (entry.count == 0){
+                DispatchQueue.main.async {
+                    self.showErrorMessage(title: "Error", message: err)
+                }
+                return
+            }
             self.productList = entry
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
@@ -64,8 +70,12 @@ class ViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let backItem = UIBarButtonItem()
         let productDetailVC = ProductDetailController()
         productDetailVC.entry = productList[indexPath.item]
+        backItem.title = productList[indexPath.item].type
+        backItem.tintColor = .blue
+        navigationItem.backBarButtonItem = backItem
         self.navigationController?.pushViewController(productDetailVC, animated: true)
     }
 

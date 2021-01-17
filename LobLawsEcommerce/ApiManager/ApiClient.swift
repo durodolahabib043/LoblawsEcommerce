@@ -14,8 +14,10 @@ class ApiClient {
         let url = URL(string: Constants.BASE_URL + Constants.CART_JSON)!
         var cartEntry: [Entry] = []
         let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
-            if let error = error {
-                self.errorMessage += "DataTask error: " + error.localizedDescription + "\n"
+            if let error = error as NSError? {
+                if error.code == -1009 {
+                    self.errorMessage += "DataTask error: \n" + error.localizedDescription + "\n"
+                }
 
             } else if
                 let data = data,
@@ -25,9 +27,9 @@ class ApiClient {
                     let cart = try JSONDecoder().decode(LoblawsProduct.self, from: data)
                     cartEntry = cart.entries
 
-                 } catch {
-                       self.errorMessage = "error"
-                 }
+                } catch {
+                    self.errorMessage = "error"
+                }
             }
             else if
                 let response = response as? HTTPURLResponse,
