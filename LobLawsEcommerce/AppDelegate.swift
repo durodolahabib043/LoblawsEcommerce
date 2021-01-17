@@ -7,6 +7,14 @@
 
 import UIKit
 
+
+class CommonNavigationContoller : UINavigationController {
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+}
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,7 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         windows = UIWindow()
         windows?.makeKeyAndVisible()
-        windows?.rootViewController = UINavigationController(rootViewController: ViewController())
+
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+
+        windows?.rootViewController = CommonNavigationContoller(rootViewController: HomeController(collectionViewLayout: layout))
         return true
     }
 

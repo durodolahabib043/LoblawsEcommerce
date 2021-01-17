@@ -7,22 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		822DBDFF25B31FC700D84D36 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822DBDFE25B31FC700D84D36 /* Extensions.swift */; };
+		822DBE0425B3C3F500D84D36 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822DBE0325B3C3F500D84D36 /* CartViewController.swift */; };
+		822DBE0825B490E800D84D36 /* HomeModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822DBE0725B490E800D84D36 /* HomeModelView.swift */; };
+		822DBE1B25B4CEF500D84D36 /* LobLawsEcommerceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822DBE1A25B4CEF500D84D36 /* LobLawsEcommerceTests.swift */; };
+		827281CB25B13BD600117BC2 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827281CA25B13BD500117BC2 /* ProductCell.swift */; };
+		827281CE25B155BB00117BC2 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827281CD25B155BB00117BC2 /* CustomImageView.swift */; };
+		82A973AD25B206AD00D3B4C2 /* ProductDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A973AC25B206AD00D3B4C2 /* ProductDetailController.swift */; };
 		82DA970825B0BDC700011C42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DA970725B0BDC700011C42 /* AppDelegate.swift */; };
-		82DA970C25B0BDC700011C42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DA970B25B0BDC700011C42 /* ViewController.swift */; };
+		82DA970C25B0BDC700011C42 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DA970B25B0BDC700011C42 /* HomeController.swift */; };
 		82DA971125B0BDCE00011C42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82DA971025B0BDCE00011C42 /* Assets.xcassets */; };
 		82DA971425B0BDCE00011C42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82DA971225B0BDCE00011C42 /* LaunchScreen.storyboard */; };
+		82DA972425B1140800011C42 /* LobLawsProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DA972325B1140800011C42 /* LobLawsProduct.swift */; };
+		82DA972A25B114E400011C42 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DA972925B114E400011C42 /* ApiClient.swift */; };
+		82DA972F25B1163D00011C42 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DA972E25B1163D00011C42 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		822DBE1D25B4CEF500D84D36 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82DA96FC25B0BDC600011C42 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 82DA970325B0BDC700011C42;
+			remoteInfo = LobLawsEcommerce;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		822DBDFE25B31FC700D84D36 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		822DBE0325B3C3F500D84D36 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		822DBE0725B490E800D84D36 /* HomeModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModelView.swift; sourceTree = "<group>"; };
+		822DBE1825B4CEF500D84D36 /* LobLawsEcommerceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LobLawsEcommerceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		822DBE1A25B4CEF500D84D36 /* LobLawsEcommerceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobLawsEcommerceTests.swift; sourceTree = "<group>"; };
+		822DBE1C25B4CEF500D84D36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		827281CA25B13BD500117BC2 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		827281CD25B155BB00117BC2 /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		82A973AC25B206AD00D3B4C2 /* ProductDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailController.swift; sourceTree = "<group>"; };
 		82DA970425B0BDC700011C42 /* LobLawsEcommerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LobLawsEcommerce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82DA970725B0BDC700011C42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		82DA970B25B0BDC700011C42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		82DA970B25B0BDC700011C42 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		82DA971025B0BDCE00011C42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82DA971325B0BDCE00011C42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		82DA971525B0BDCE00011C42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82DA972325B1140800011C42 /* LobLawsProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobLawsProduct.swift; sourceTree = "<group>"; };
+		82DA972925B114E400011C42 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		82DA972E25B1163D00011C42 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		822DBE1525B4CEF500D84D36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		82DA970125B0BDC700011C42 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -33,10 +72,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		822DBE1925B4CEF500D84D36 /* LobLawsEcommerceTests */ = {
+			isa = PBXGroup;
+			children = (
+				822DBE1A25B4CEF500D84D36 /* LobLawsEcommerceTests.swift */,
+				822DBE1C25B4CEF500D84D36 /* Info.plist */,
+			);
+			path = LobLawsEcommerceTests;
+			sourceTree = "<group>";
+		};
 		82DA96FB25B0BDC600011C42 = {
 			isa = PBXGroup;
 			children = (
 				82DA970625B0BDC700011C42 /* LobLawsEcommerce */,
+				822DBE1925B4CEF500D84D36 /* LobLawsEcommerceTests */,
 				82DA970525B0BDC700011C42 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				82DA970425B0BDC700011C42 /* LobLawsEcommerce.app */,
+				822DBE1825B4CEF500D84D36 /* LobLawsEcommerceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -52,8 +102,12 @@
 		82DA970625B0BDC700011C42 /* LobLawsEcommerce */ = {
 			isa = PBXGroup;
 			children = (
+				82DA972D25B1151C00011C42 /* Helper */,
+				82DA972825B114A600011C42 /* ApiManager */,
+				82DA972725B1141E00011C42 /* ModelView */,
+				82DA972625B1141400011C42 /* View */,
+				82DA972225B113E700011C42 /* Model */,
 				82DA970725B0BDC700011C42 /* AppDelegate.swift */,
-				82DA970B25B0BDC700011C42 /* ViewController.swift */,
 				82DA971025B0BDCE00011C42 /* Assets.xcassets */,
 				82DA971225B0BDCE00011C42 /* LaunchScreen.storyboard */,
 				82DA971525B0BDCE00011C42 /* Info.plist */,
@@ -61,9 +115,72 @@
 			path = LobLawsEcommerce;
 			sourceTree = "<group>";
 		};
+		82DA972225B113E700011C42 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				82DA972325B1140800011C42 /* LobLawsProduct.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		82DA972625B1141400011C42 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82DA970B25B0BDC700011C42 /* HomeController.swift */,
+				827281CA25B13BD500117BC2 /* ProductCell.swift */,
+				82A973AC25B206AD00D3B4C2 /* ProductDetailController.swift */,
+				822DBE0325B3C3F500D84D36 /* CartViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82DA972725B1141E00011C42 /* ModelView */ = {
+			isa = PBXGroup;
+			children = (
+				822DBE0725B490E800D84D36 /* HomeModelView.swift */,
+			);
+			path = ModelView;
+			sourceTree = "<group>";
+		};
+		82DA972825B114A600011C42 /* ApiManager */ = {
+			isa = PBXGroup;
+			children = (
+				82DA972925B114E400011C42 /* ApiClient.swift */,
+			);
+			path = ApiManager;
+			sourceTree = "<group>";
+		};
+		82DA972D25B1151C00011C42 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				82DA972E25B1163D00011C42 /* Constant.swift */,
+				827281CD25B155BB00117BC2 /* CustomImageView.swift */,
+				822DBDFE25B31FC700D84D36 /* Extensions.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		822DBE1725B4CEF500D84D36 /* LobLawsEcommerceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 822DBE1F25B4CEF500D84D36 /* Build configuration list for PBXNativeTarget "LobLawsEcommerceTests" */;
+			buildPhases = (
+				822DBE1425B4CEF500D84D36 /* Sources */,
+				822DBE1525B4CEF500D84D36 /* Frameworks */,
+				822DBE1625B4CEF500D84D36 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				822DBE1E25B4CEF500D84D36 /* PBXTargetDependency */,
+			);
+			name = LobLawsEcommerceTests;
+			productName = LobLawsEcommerceTests;
+			productReference = 822DBE1825B4CEF500D84D36 /* LobLawsEcommerceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		82DA970325B0BDC700011C42 /* LobLawsEcommerce */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 82DA971825B0BDCE00011C42 /* Build configuration list for PBXNativeTarget "LobLawsEcommerce" */;
@@ -90,6 +207,10 @@
 				LastSwiftUpdateCheck = 1230;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
+					822DBE1725B4CEF500D84D36 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 82DA970325B0BDC700011C42;
+					};
 					82DA970325B0BDC700011C42 = {
 						CreatedOnToolsVersion = 12.3;
 					};
@@ -109,11 +230,19 @@
 			projectRoot = "";
 			targets = (
 				82DA970325B0BDC700011C42 /* LobLawsEcommerce */,
+				822DBE1725B4CEF500D84D36 /* LobLawsEcommerceTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		822DBE1625B4CEF500D84D36 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		82DA970225B0BDC700011C42 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -126,16 +255,41 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		822DBE1425B4CEF500D84D36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				822DBE1B25B4CEF500D84D36 /* LobLawsEcommerceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		82DA970025B0BDC700011C42 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82DA970C25B0BDC700011C42 /* ViewController.swift in Sources */,
+				82A973AD25B206AD00D3B4C2 /* ProductDetailController.swift in Sources */,
+				822DBDFF25B31FC700D84D36 /* Extensions.swift in Sources */,
+				822DBE0425B3C3F500D84D36 /* CartViewController.swift in Sources */,
+				82DA970C25B0BDC700011C42 /* HomeController.swift in Sources */,
+				82DA972425B1140800011C42 /* LobLawsProduct.swift in Sources */,
+				822DBE0825B490E800D84D36 /* HomeModelView.swift in Sources */,
+				82DA972F25B1163D00011C42 /* Constant.swift in Sources */,
+				827281CE25B155BB00117BC2 /* CustomImageView.swift in Sources */,
+				827281CB25B13BD600117BC2 /* ProductCell.swift in Sources */,
 				82DA970825B0BDC700011C42 /* AppDelegate.swift in Sources */,
+				82DA972A25B114E400011C42 /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		822DBE1E25B4CEF500D84D36 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 82DA970325B0BDC700011C42 /* LobLawsEcommerce */;
+			targetProxy = 822DBE1D25B4CEF500D84D36 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		82DA971225B0BDCE00011C42 /* LaunchScreen.storyboard */ = {
@@ -149,6 +303,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		822DBE2025B4CEF500D84D36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DZHAL8F38Z;
+				INFOPLIST_FILE = LobLawsEcommerceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.doh.LobLawsEcommerceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LobLawsEcommerce.app/LobLawsEcommerce";
+			};
+			name = Debug;
+		};
+		822DBE2125B4CEF500D84D36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DZHAL8F38Z;
+				INFOPLIST_FILE = LobLawsEcommerceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.doh.LobLawsEcommerceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LobLawsEcommerce.app/LobLawsEcommerce";
+			};
+			name = Release;
+		};
 		82DA971625B0BDCE00011C42 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -308,6 +502,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		822DBE1F25B4CEF500D84D36 /* Build configuration list for PBXNativeTarget "LobLawsEcommerceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				822DBE2025B4CEF500D84D36 /* Debug */,
+				822DBE2125B4CEF500D84D36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		82DA96FF25B0BDC600011C42 /* Build configuration list for PBXProject "LobLawsEcommerce" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
