@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UICollectionViewController {
+class HomeController: UICollectionViewController {
 
     let cellId = "productCellId"
     var productList: [Entry] = []

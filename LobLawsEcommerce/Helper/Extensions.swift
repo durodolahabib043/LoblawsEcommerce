@@ -44,8 +44,8 @@ extension UIViewController {
     }
 }
 
-//MARK:- ViewController
-extension ViewController : UICollectionViewDelegateFlowLayout {
+//MARK:- HomeController
+extension HomeController : UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (view.frame.width/2)-20, height: view.frame.height/3)

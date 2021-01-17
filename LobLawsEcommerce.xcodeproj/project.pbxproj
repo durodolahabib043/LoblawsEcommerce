@@ -13,7 +13,7 @@
 		827281CE25B155BB00117BC2 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827281CD25B155BB00117BC2 /* CustomImageView.swift */; };
 		82A973AD25B206AD00D3B4C2 /* ProductDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A973AC25B206AD00D3B4C2 /* ProductDetailController.swift */; };
 		82DA970825B0BDC700011C42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DA970725B0BDC700011C42 /* AppDelegate.swift */; };
-		82DA970C25B0BDC700011C42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DA970B25B0BDC700011C42 /* ViewController.swift */; };
+		82DA970C25B0BDC700011C42 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DA970B25B0BDC700011C42 /* HomeController.swift */; };
 		82DA971125B0BDCE00011C42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82DA971025B0BDCE00011C42 /* Assets.xcassets */; };
 		82DA971425B0BDCE00011C42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82DA971225B0BDCE00011C42 /* LaunchScreen.storyboard */; };
 		82DA972425B1140800011C42 /* LobLawsProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DA972325B1140800011C42 /* LobLawsProduct.swift */; };
@@ -29,7 +29,7 @@
 		82A973AC25B206AD00D3B4C2 /* ProductDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailController.swift; sourceTree = "<group>"; };
 		82DA970425B0BDC700011C42 /* LobLawsEcommerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LobLawsEcommerce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82DA970725B0BDC700011C42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		82DA970B25B0BDC700011C42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		82DA970B25B0BDC700011C42 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		82DA971025B0BDCE00011C42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82DA971325B0BDCE00011C42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		82DA971525B0BDCE00011C42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 		82DA972625B1141400011C42 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				82DA970B25B0BDC700011C42 /* ViewController.swift */,
+				82DA970B25B0BDC700011C42 /* HomeController.swift */,
 				827281CA25B13BD500117BC2 /* ProductCell.swift */,
 				82A973AC25B206AD00D3B4C2 /* ProductDetailController.swift */,
 				822DBE0325B3C3F500D84D36 /* CartViewController.swift */,
@@ -197,7 +197,7 @@
 				82A973AD25B206AD00D3B4C2 /* ProductDetailController.swift in Sources */,
 				822DBDFF25B31FC700D84D36 /* Extensions.swift in Sources */,
 				822DBE0425B3C3F500D84D36 /* CartViewController.swift in Sources */,
-				82DA970C25B0BDC700011C42 /* ViewController.swift in Sources */,
+				82DA970C25B0BDC700011C42 /* HomeController.swift in Sources */,
 				82DA972425B1140800011C42 /* LobLawsProduct.swift in Sources */,
 				82DA972F25B1163D00011C42 /* Constant.swift in Sources */,
 				827281CE25B155BB00117BC2 /* CustomImageView.swift in Sources */,

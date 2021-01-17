@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 
-        windows?.rootViewController = UINavigationController(rootViewController: ViewController(collectionViewLayout: layout))
+        windows?.rootViewController = UINavigationController(rootViewController: HomeController(collectionViewLayout: layout))
         return true
     }
 
