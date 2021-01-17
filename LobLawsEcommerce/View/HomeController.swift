@@ -12,14 +12,17 @@ class HomeController: UICollectionViewController , HomeModelViewDelete{
 
     let cellId = "productCellId"
     var productList: [Entry] = []
+    var homeMV: HomeModelView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = .white
-        let homeMV = HomeModelView()
-        homeMV.delegate = self
-        homeMV.fetchData()
+        homeMV = HomeModelView()
+        if let homeMVVM = homeMV {
+            homeMVVM.delegate = self
+            homeMVVM.fetchData()
+        }
         setupNaviagtionTitle()
     }
     //MARK:- NAV
@@ -31,7 +34,6 @@ class HomeController: UICollectionViewController , HomeModelViewDelete{
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.text = "Products"
         navigationItem.titleView = label
-        collectionView.alwaysBounceVertical = true
         collectionView.backgroundColor = .white
         collectionView.register(ProductCell.self, forCellWithReuseIdentifier: cellId)
     }
@@ -46,23 +48,14 @@ class HomeController: UICollectionViewController , HomeModelViewDelete{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ProductCell
         cell.loblowsProduct = productList[indexPath.item]
         if (indexPath.row == 1) {
-            let font = UIFont.boldSystemFont(ofSize: 22)
-            let attributes = [NSAttributedString.Key.font: font , NSAttributedString.Key.foregroundColor : UIColor.red]
-
-            let attributedProductName = NSAttributedString(string: "$2.99 ", attributes: attributes)
-            let strikeOutText = NSMutableAttributedString()
-            strikeOutText.append(attributedProductName)
-            strikeOutText.append(productList[indexPath.row].price.strikeThrough())
-            cell.productPrice.attributedText = strikeOutText
+            guard let homeMVVM = homeMV else {
+                return cell
+            }
+            cell.productPrice.attributedText =  homeMVVM.displayPrice(price: productList[indexPath.row].price)
         }
         return cell
     }
 
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        self.collectionView.collectionViewLayout.invalidateLayout()
-
-        super.viewWillTransition(to: size, with: coordinator)
-    }
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let productDetailVC = ProductDetailController()
