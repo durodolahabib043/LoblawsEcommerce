@@ -92,7 +92,6 @@ class ProductCell: UICollectionViewCell {
             guard let products = loblowsProduct else {
                 return
             }
-
             productImage.loadImageUsingUrlString(urlString: products.image)
             productName.attributedText = NSMutableAttributedString().setProductNameType(product: products.name, productType: products.type)
             productPrice.text = "\(products.price)"

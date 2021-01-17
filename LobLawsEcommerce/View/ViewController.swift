@@ -33,7 +33,6 @@ class ViewController: UICollectionViewController {
     }
     //MARK:- NAV
     func setupNaviagtionTitle(){
-        
         navigationItem.title = "Products"
         collectionView.alwaysBounceVertical = true
         collectionView.backgroundColor = .white
@@ -49,7 +48,6 @@ class ViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ProductCell
         cell.loblowsProduct = productList[indexPath.item]
         if (indexPath.row == 1) {
-
             let font = UIFont.boldSystemFont(ofSize: 22)
             let attributes = [NSAttributedString.Key.font: font , NSAttributedString.Key.foregroundColor : UIColor.red]
 
@@ -57,7 +55,6 @@ class ViewController: UICollectionViewController {
             let strikeOutText = NSMutableAttributedString()
             strikeOutText.append(attributedProductName)
             strikeOutText.append(productList[indexPath.row].price.strikeThrough())
-
             cell.productPrice.attributedText = strikeOutText
         }
         return cell
@@ -81,17 +78,3 @@ class ViewController: UICollectionViewController {
 
 }
 
-extension ViewController : UICollectionViewDelegateFlowLayout {
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (view.frame.width/2)-20, height: view.frame.height/3)
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 1, left: 10, bottom: 1, right: 10)
-    }
-
-}
