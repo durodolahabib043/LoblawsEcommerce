@@ -25,7 +25,6 @@ class ProductDetailController: UIViewController {
         let textview = UILabel()
         textview.translatesAutoresizingMaskIntoConstraints = false
         textview.numberOfLines = 3
-
         textview.font = UIFont.systemFont(ofSize: 20)
         return textview
     }()
@@ -124,7 +123,7 @@ class ProductDetailController: UIViewController {
         ///productName
         constraints += [NSLayoutConstraint.init(item: productName, attribute: .leading, relatedBy: .equal, toItem: scrollView, attribute: .leading, multiplier: 1.0, constant: 0.0)]
 
-        constraints += [NSLayoutConstraint.init(item: productName, attribute: .trailing, relatedBy: .equal, toItem: scrollView, attribute: .trailing, multiplier: 1.0, constant: 0.0)]
+        constraints += [NSLayoutConstraint.init(item: productName, attribute: .trailing, relatedBy: .equal, toItem: safeArea, attribute: .trailing, multiplier: 1.0, constant: 0.0)]
         constraints += [NSLayoutConstraint.init(item: productName, attribute: .top, relatedBy: .equal, toItem: scrollView, attribute: .top, multiplier: 1.0, constant: 10.0)]
 
         ///scrollView
