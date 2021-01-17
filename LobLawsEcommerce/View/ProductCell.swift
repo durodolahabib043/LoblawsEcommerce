@@ -21,14 +21,15 @@ class ProductCell: UICollectionViewCell {
     }()
 
     let productName : UILabel = {
-        let textview = UILabel()
-        textview.translatesAutoresizingMaskIntoConstraints = false
-        textview.numberOfLines = 7
-        return textview
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.boldSystemFont(ofSize: 16.0)
+        label.numberOfLines = 7
+        return label
     }()
     let productPrice : UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 18.0)
+        label.font = UIFont.boldSystemFont(ofSize: 16.0)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
         return label
