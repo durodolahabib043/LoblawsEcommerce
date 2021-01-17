@@ -7,12 +7,13 @@
 
 import UIKit
 
+
 //MARK:- NSMutableAttributedString
 extension NSMutableAttributedString {
     func setProductNameType(product: String , productType: String)->NSMutableAttributedString {
         let quote = "\(product)"
         let font = UIFont.boldSystemFont(ofSize: 16)
-        let attributes = [NSAttributedString.Key.font: font]
+        let attributes = [NSAttributedString.Key.font: font , NSAttributedString.Key.foregroundColor : UIColor.black]
 
         let attributedProductName = NSAttributedString(string: quote, attributes: attributes)
         let attributedProductType = NSAttributedString(string: "\n\(productType)", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray
@@ -42,6 +43,25 @@ extension UIViewController {
         let dialogMessage = UIAlertController(title: title, message: message, preferredStyle: .alert)
         self.present(dialogMessage, animated: true, completion: nil)
     }
+    func changeBackColor(title : String){
+        let backItem = UIBarButtonItem()
+         backItem.title = title
+        backItem.tintColor = .white
+        navigationItem.backBarButtonItem = backItem
+    }
+     func setNavigtionBarItems() {
+          if #available(iOS 13.0, *) {
+              let appearance = UINavigationBarAppearance()
+              appearance.configureWithDefaultBackground()
+              appearance.backgroundColor = .red
+              navigationController?.navigationBar.standardAppearance = appearance
+              navigationController?.navigationBar.scrollEdgeAppearance = appearance
+              //navigationController?.navigationBar.compactAppearance = appearance
+          } else {
+              // Fallback on earlier versions
+              navigationController?.navigationBar.barTintColor = .red
+          }
+      }
 }
 
 //MARK:- HomeController

@@ -59,16 +59,18 @@ class ProductDetailController: UIViewController {
     let productCode : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.textColor = .black
         return label
     }()
 
     let productAbout : UILabel = {
-        let textview = UILabel()
-        textview.translatesAutoresizingMaskIntoConstraints = false
-        textview.font = UIFont.systemFont(ofSize: 20)
-        textview.numberOfLines = 50
-        return textview
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 20)
+        label.numberOfLines = 50
+        label.textColor = .black
+        return label
     }()
 
     let scrollView: UIScrollView = {
@@ -125,7 +127,13 @@ class ProductDetailController: UIViewController {
     }
 
     @objc func launchCartController(){
-        navigationController?.pushViewController(CartViewController(), animated: true)
+
+        let cartVC = CartViewController()
+        cartVC.entry = entry
+        if let title = entry {
+            self.changeBackColor(title: title.type)
+        }
+        navigationController?.pushViewController(cartVC, animated: true)
     }
 
 }

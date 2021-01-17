@@ -7,7 +7,8 @@
 
 import UIKit
 
-class HomeController: UICollectionViewController {
+class HomeController: UICollectionViewController , HomeModelViewDelete{
+
 
     let cellId = "productCellId"
     var productList: [Entry] = []
@@ -16,28 +17,25 @@ class HomeController: UICollectionViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = .white
-        let apiClient = ApiClient()
-        apiClient.fetchCart(inputJson: "") { (entry, err) in
-            if (entry.count == 0){
-                DispatchQueue.main.async {
-                    self.showErrorMessage(title: "Error", message: err)
-                }
-                return
-            }
-            self.productList = entry
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        }
+        let homeMV = HomeModelView()
+        homeMV.delegate = self
+        homeMV.fetchData()
         setupNaviagtionTitle()
     }
     //MARK:- NAV
     func setupNaviagtionTitle(){
-        navigationItem.title = "Products"
+        setNavigtionBarItems()
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50))
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.text = "Products"
+        navigationItem.titleView = label
         collectionView.alwaysBounceVertical = true
         collectionView.backgroundColor = .white
         collectionView.register(ProductCell.self, forCellWithReuseIdentifier: cellId)
     }
+
 
     //MARK: - COLLECTION DELEGATE
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -67,14 +65,24 @@ class HomeController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let backItem = UIBarButtonItem()
         let productDetailVC = ProductDetailController()
         productDetailVC.entry = productList[indexPath.item]
-        backItem.title = productList[indexPath.item].type
-        backItem.tintColor = .blue
-        navigationItem.backBarButtonItem = backItem
+        self.changeBackColor(title: productList[indexPath.item].type)
         self.navigationController?.pushViewController(productDetailVC, animated: true)
     }
 
+    //MARK:- HOMEDELEGATE
+    func networkApiFails(error: String) {
+        DispatchQueue.main.async {
+            self.showErrorMessage(title: "Error", message: error)
+        }
+    }
+
+    func networkApiSuccessful(entry: [Entry]) {
+        self.productList = entry
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
 }
 
