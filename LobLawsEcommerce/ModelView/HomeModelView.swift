@@ -21,6 +21,10 @@ class HomeModelView {
 
         apiClient.fetchCart(inputJson: Constants.CART_JSON) { [weak self](entry, err) in
             guard let self = self else { return }
+//=======
+//        let apiClient = ApiClient()
+//        apiClient.fetchCart(inputJson: Constants.CART_JSON) { (entry, err) in
+//>>>>>>> 945456d ( code clean up)
             if (entry.count == 0){
                 self.delegate.networkApiFails(error: err)
                 return

@@ -32,8 +32,11 @@ class HomeController: UICollectionViewController , HomeModelViewDelete , UISearc
         setNavTitle()
         collectionView.backgroundColor = .white
         collectionView.register(ProductCell.self, forCellWithReuseIdentifier: cellId)
-        collectionView.register(ProductHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: productHeader)
 
+        collectionView.register(ProductHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: productHeader)
+//
+//=======
+//>>>>>>> 945456d ( code clean up)
     }
 
     fileprivate func setNavTitle(){
