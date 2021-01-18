@@ -16,7 +16,6 @@ class HomeController: UICollectionViewController , HomeModelViewDelete{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         view.backgroundColor = .white
         homeMV = HomeModelView()
         if let homeMVVM = homeMV {
@@ -28,14 +27,19 @@ class HomeController: UICollectionViewController , HomeModelViewDelete{
     //MARK:- NAV
     func setupNaviagtionTitle(){
         setNavigtionBarItems()
+        setNavTitle()
+        collectionView.backgroundColor = .white
+        collectionView.register(ProductCell.self, forCellWithReuseIdentifier: cellId)
+    }
+
+    fileprivate func setNavTitle(){
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50))
         label.textColor = .white
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.text = "Products"
         navigationItem.titleView = label
-        collectionView.backgroundColor = .white
-        collectionView.register(ProductCell.self, forCellWithReuseIdentifier: cellId)
+
     }
 
 

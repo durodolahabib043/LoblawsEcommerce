@@ -17,7 +17,7 @@ class HomeModelView {
 
     func fetchData(){
         let apiClient = ApiClient()
-        apiClient.fetchCart(inputJson: "") { (entry, err) in
+        apiClient.fetchCart(inputJson: Constants.CART_JSON) { (entry, err) in
             if (entry.count == 0){
                 self.delegate.networkApiFails(error: err)
                 return

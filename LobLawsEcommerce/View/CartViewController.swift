@@ -11,7 +11,7 @@ class CartViewController: UIViewController {
 
     var safeArea: UILayoutGuide!
     var entry: Entry?
-
+//MARK:- VIEWS
     lazy var productImage : CustomImageView = {
         let image = CustomImageView()
         image.contentMode = .scaleAspectFit
@@ -43,7 +43,7 @@ class CartViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
+    //MARK:- HANDLERS
     func setupView() {
         view.addSubview(productImage)
         view.addSubview(productName)

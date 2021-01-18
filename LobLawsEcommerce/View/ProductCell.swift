@@ -10,7 +10,7 @@ import UIKit
 class ProductCell: UICollectionViewCell {
 
     var safeArea: UILayoutGuide!
-
+//MARK:- VIEWS
     lazy var productImage : CustomImageView = {
         let image = CustomImageView()
         image.contentMode = .scaleAspectFit
@@ -45,6 +45,7 @@ class ProductCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+    //MARK:- HANDLER
     func setupView() {
         addSubview(productImage)
         addSubview(productName)
@@ -54,7 +55,7 @@ class ProductCell: UICollectionViewCell {
     }
 
     func addAutolayout(){
-        addBorder()
+        addCellBorder()
         var constraints = [NSLayoutConstraint]()
         let containerView: [UIView] = [productImage,productName,productPrice]
 
@@ -81,7 +82,7 @@ class ProductCell: UICollectionViewCell {
 
     }
 
-    func addBorder(){
+    func addCellBorder(){
         layer.masksToBounds = true
         layer.cornerRadius = 5
         layer.borderWidth = 1

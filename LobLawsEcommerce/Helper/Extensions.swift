@@ -56,7 +56,6 @@ extension UIViewController {
               appearance.backgroundColor = .red
               navigationController?.navigationBar.standardAppearance = appearance
               navigationController?.navigationBar.scrollEdgeAppearance = appearance
-              //navigationController?.navigationBar.compactAppearance = appearance
           } else {
               // Fallback on earlier versions
               navigationController?.navigationBar.barTintColor = .red
