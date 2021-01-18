@@ -11,7 +11,7 @@ class ApiClient {
     var errorMessage = ""
 
     func fetchCart(inputJson:String , completionHandler: @escaping ([Entry] , _ error: String) -> Void) {
-        let url = URL(string: Constants.BASE_URL + Constants.CART_JSON)!
+        let url = URL(string: Constants.BASE_URL + inputJson)!
         var cartEntry: [Entry] = []
         let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
             if let error = error as NSError? {
