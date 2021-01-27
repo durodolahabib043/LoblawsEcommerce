@@ -7,11 +7,12 @@
 
 import UIKit
 
-class HomeController: UICollectionViewController , HomeModelViewDelete{
-
+class HomeController: UICollectionViewController , HomeModelViewDelete , UISearchBarDelegate{
 
     let cellId = "productCellId"
+    let productHeader = "headerView"
     var productList: [Entry] = []
+    var reloadCollectionView = [Entry]()
     var homeMV: HomeModelView?
 
     override func viewDidLoad() {
@@ -22,6 +23,7 @@ class HomeController: UICollectionViewController , HomeModelViewDelete{
             homeMVVM.delegate = self
             homeMVVM.fetchData()
         }
+
         setupNaviagtionTitle()
     }
     //MARK:- NAV
@@ -30,6 +32,8 @@ class HomeController: UICollectionViewController , HomeModelViewDelete{
         setNavTitle()
         collectionView.backgroundColor = .white
         collectionView.register(ProductCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(ProductHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: productHeader)
+
     }
 
     fileprivate func setNavTitle(){
@@ -68,6 +72,17 @@ class HomeController: UICollectionViewController , HomeModelViewDelete{
         self.navigationController?.pushViewController(productDetailVC, animated: true)
     }
 
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView  = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: productHeader, for: indexPath) as! ProductHeaderView
+        headerView.searchBar.delegate = self
+        if let searchTextField = headerView.searchBar.value(forKey: "searchField") as? UITextField , let clearButton = searchTextField.value(forKey: "_clearButton")as? UIButton {
+
+            clearButton.addTarget(self, action: #selector(self.clearCollectionView), for: .touchUpInside)
+        }
+        return headerView
+    }
+
+
     //MARK:- HOMEDELEGATE
     func networkApiFails(error: String) {
         DispatchQueue.main.async {
@@ -77,9 +92,27 @@ class HomeController: UICollectionViewController , HomeModelViewDelete{
 
     func networkApiSuccessful(entry: [Entry]) {
         self.productList = entry
+        reloadCollectionView = entry
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
+
+        var filtered = [Entry]()
+        filtered = productList
+        productList = searchBar.text!.isEmpty ? filtered : filtered.filter({ (entry) -> Bool in
+            return entry.name.range(of: searchBar.text!, options: .caseInsensitive) != nil
+        })
+        collectionView.reloadData()
+        searchBar.resignFirstResponder()
+        searchBar.endEditing(true)
+    }
+
+    @objc func clearCollectionView() {
+        productList = reloadCollectionView
+        collectionView.reloadData()
+        print("clearCollectionView")
     }
 }
 

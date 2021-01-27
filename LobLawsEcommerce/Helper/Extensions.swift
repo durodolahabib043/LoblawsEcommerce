@@ -77,6 +77,9 @@ extension HomeController : UICollectionViewDelegateFlowLayout {
         return UIEdgeInsets(top: 1, left: 10, bottom: 1, right: 10)
     }
 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+           return CGSize(width: collectionView.frame.width, height: 50)
+       }
 }
 
 //MARK:- ProductDetailController
@@ -143,3 +146,4 @@ extension ProductDetailController {
 
     }
 }
+
