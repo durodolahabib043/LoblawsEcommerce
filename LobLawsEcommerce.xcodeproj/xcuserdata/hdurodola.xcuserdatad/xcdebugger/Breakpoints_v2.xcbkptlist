@@ -47,16 +47,22 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9608d5e ( add singleton)
             startingLineNumber = "22"
             endingLineNumber = "22"
             landmarkName = "fetchCart(inputJson:completionHandler:)"
             landmarkType = "7">
+<<<<<<< HEAD
 =======
             startingLineNumber = "17"
             endingLineNumber = "17"
             landmarkName = "unknown"
             landmarkType = "0">
 >>>>>>> cb74300 ( added search bar)
+=======
+>>>>>>> 9608d5e ( add singleton)
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
