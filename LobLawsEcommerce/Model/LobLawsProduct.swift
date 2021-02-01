@@ -7,6 +7,14 @@
 
 import Foundation
 
+
+struct CombineProduct {
+    let entries: [Entry]
+}
+
+
+
+
 struct LoblawsProduct: Codable {
     let entries: [Entry]
 }

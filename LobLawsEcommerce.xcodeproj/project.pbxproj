@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3572DD8829F9859E92656CA3 /* Pods_LobLawsEcommerceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50ADFF7A367770762CD30BEB /* Pods_LobLawsEcommerceTests.framework */; };
 		822DBDFF25B31FC700D84D36 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822DBDFE25B31FC700D84D36 /* Extensions.swift */; };
 		822DBE0425B3C3F500D84D36 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822DBE0325B3C3F500D84D36 /* CartViewController.swift */; };
 		822DBE0825B490E800D84D36 /* HomeModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822DBE0725B490E800D84D36 /* HomeModelView.swift */; };
 		822DBE1B25B4CEF500D84D36 /* LobLawsEcommerceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822DBE1A25B4CEF500D84D36 /* LobLawsEcommerceTests.swift */; };
+		825034DD25C44FBD001417FC /* Promo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825034DC25C44FBD001417FC /* Promo.swift */; };
 		827281CB25B13BD600117BC2 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827281CA25B13BD500117BC2 /* ProductCell.swift */; };
 		827281CE25B155BB00117BC2 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827281CD25B155BB00117BC2 /* CustomImageView.swift */; };
 		82A973AD25B206AD00D3B4C2 /* ProductDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A973AC25B206AD00D3B4C2 /* ProductDetailController.swift */; };
@@ -21,6 +23,7 @@
 		82DA972425B1140800011C42 /* LobLawsProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DA972325B1140800011C42 /* LobLawsProduct.swift */; };
 		82DA972A25B114E400011C42 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DA972925B114E400011C42 /* ApiClient.swift */; };
 		82DA972F25B1163D00011C42 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DA972E25B1163D00011C42 /* Constant.swift */; };
+		CCB0E1964990CF5466651CE5 /* Pods_LobLawsEcommerce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF77BC49807DB8467375B0FC /* Pods_LobLawsEcommerce.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,12 +37,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D57C12CDC5154786F0551A1 /* Pods-LobLawsEcommerceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LobLawsEcommerceTests.debug.xcconfig"; path = "Target Support Files/Pods-LobLawsEcommerceTests/Pods-LobLawsEcommerceTests.debug.xcconfig"; sourceTree = "<group>"; };
+		39213CEA304000B26D96C74C /* Pods-LobLawsEcommerce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LobLawsEcommerce.release.xcconfig"; path = "Target Support Files/Pods-LobLawsEcommerce/Pods-LobLawsEcommerce.release.xcconfig"; sourceTree = "<group>"; };
+		50ADFF7A367770762CD30BEB /* Pods_LobLawsEcommerceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LobLawsEcommerceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		822DBDFE25B31FC700D84D36 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		822DBE0325B3C3F500D84D36 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		822DBE0725B490E800D84D36 /* HomeModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModelView.swift; sourceTree = "<group>"; };
 		822DBE1825B4CEF500D84D36 /* LobLawsEcommerceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LobLawsEcommerceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		822DBE1A25B4CEF500D84D36 /* LobLawsEcommerceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobLawsEcommerceTests.swift; sourceTree = "<group>"; };
 		822DBE1C25B4CEF500D84D36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		825034DC25C44FBD001417FC /* Promo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promo.swift; sourceTree = "<group>"; };
 		827281CA25B13BD500117BC2 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		827281CD25B155BB00117BC2 /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		82A973AC25B206AD00D3B4C2 /* ProductDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailController.swift; sourceTree = "<group>"; };
@@ -52,6 +59,9 @@
 		82DA972325B1140800011C42 /* LobLawsProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobLawsProduct.swift; sourceTree = "<group>"; };
 		82DA972925B114E400011C42 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		82DA972E25B1163D00011C42 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		B8695752F51C40C9E4D6FDB3 /* Pods-LobLawsEcommerceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LobLawsEcommerceTests.release.xcconfig"; path = "Target Support Files/Pods-LobLawsEcommerceTests/Pods-LobLawsEcommerceTests.release.xcconfig"; sourceTree = "<group>"; };
+		DEB84D6654538E33BF2573CD /* Pods-LobLawsEcommerce.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LobLawsEcommerce.debug.xcconfig"; path = "Target Support Files/Pods-LobLawsEcommerce/Pods-LobLawsEcommerce.debug.xcconfig"; sourceTree = "<group>"; };
+		DF77BC49807DB8467375B0FC /* Pods_LobLawsEcommerce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LobLawsEcommerce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3572DD8829F9859E92656CA3 /* Pods_LobLawsEcommerceTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCB0E1964990CF5466651CE5 /* Pods_LobLawsEcommerce.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +99,8 @@
 				82DA970625B0BDC700011C42 /* LobLawsEcommerce */,
 				822DBE1925B4CEF500D84D36 /* LobLawsEcommerceTests */,
 				82DA970525B0BDC700011C42 /* Products */,
+				98CEDA0F3E00C73744137E77 /* Pods */,
+				FF4A7F72FEDB4FD660949147 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				82DA972325B1140800011C42 /* LobLawsProduct.swift */,
+				825034DC25C44FBD001417FC /* Promo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -160,6 +175,27 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		98CEDA0F3E00C73744137E77 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DEB84D6654538E33BF2573CD /* Pods-LobLawsEcommerce.debug.xcconfig */,
+				39213CEA304000B26D96C74C /* Pods-LobLawsEcommerce.release.xcconfig */,
+				2D57C12CDC5154786F0551A1 /* Pods-LobLawsEcommerceTests.debug.xcconfig */,
+				B8695752F51C40C9E4D6FDB3 /* Pods-LobLawsEcommerceTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FF4A7F72FEDB4FD660949147 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF77BC49807DB8467375B0FC /* Pods_LobLawsEcommerce.framework */,
+				50ADFF7A367770762CD30BEB /* Pods_LobLawsEcommerceTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,6 +203,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 822DBE1F25B4CEF500D84D36 /* Build configuration list for PBXNativeTarget "LobLawsEcommerceTests" */;
 			buildPhases = (
+				EC9DEB8BDA0DEB47BE75500B /* [CP] Check Pods Manifest.lock */,
 				822DBE1425B4CEF500D84D36 /* Sources */,
 				822DBE1525B4CEF500D84D36 /* Frameworks */,
 				822DBE1625B4CEF500D84D36 /* Resources */,
@@ -185,9 +222,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 82DA971825B0BDCE00011C42 /* Build configuration list for PBXNativeTarget "LobLawsEcommerce" */;
 			buildPhases = (
+				824EA15E95393AF0BC6C7001 /* [CP] Check Pods Manifest.lock */,
 				82DA970025B0BDC700011C42 /* Sources */,
 				82DA970125B0BDC700011C42 /* Frameworks */,
 				82DA970225B0BDC700011C42 /* Resources */,
+				C4492CE3355E2CBD596BB387 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -254,6 +293,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		824EA15E95393AF0BC6C7001 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LobLawsEcommerce-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4492CE3355E2CBD596BB387 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LobLawsEcommerce/Pods-LobLawsEcommerce-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LobLawsEcommerce/Pods-LobLawsEcommerce-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LobLawsEcommerce/Pods-LobLawsEcommerce-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC9DEB8BDA0DEB47BE75500B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LobLawsEcommerceTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		822DBE1425B4CEF500D84D36 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -270,6 +373,7 @@
 				82A973AD25B206AD00D3B4C2 /* ProductDetailController.swift in Sources */,
 				822DBDFF25B31FC700D84D36 /* Extensions.swift in Sources */,
 				822DBE0425B3C3F500D84D36 /* CartViewController.swift in Sources */,
+				825034DD25C44FBD001417FC /* Promo.swift in Sources */,
 				82DA970C25B0BDC700011C42 /* HomeController.swift in Sources */,
 				82DA972425B1140800011C42 /* LobLawsProduct.swift in Sources */,
 				822DBE0825B490E800D84D36 /* HomeModelView.swift in Sources */,
@@ -305,6 +409,7 @@
 /* Begin XCBuildConfiguration section */
 		822DBE2025B4CEF500D84D36 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D57C12CDC5154786F0551A1 /* Pods-LobLawsEcommerceTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -325,6 +430,7 @@
 		};
 		822DBE2125B4CEF500D84D36 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8695752F51C40C9E4D6FDB3 /* Pods-LobLawsEcommerceTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -461,6 +567,7 @@
 		};
 		82DA971925B0BDCE00011C42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEB84D6654538E33BF2573CD /* Pods-LobLawsEcommerce.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -481,6 +588,7 @@
 		};
 		82DA971A25B0BDCE00011C42 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39213CEA304000B26D96C74C /* Pods-LobLawsEcommerce.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

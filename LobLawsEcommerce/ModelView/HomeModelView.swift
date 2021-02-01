@@ -17,13 +17,38 @@ class HomeModelView {
 
     func fetchData(){
         let apiClient = ApiClient()
-        apiClient.fetchCart(inputJson: Constants.CART_JSON) { (entry, err) in
-            if (entry.count == 0){
-                self.delegate.networkApiFails(error: err)
+
+        apiClient.getCartPromise().done({
+            result in
+            if (result.entries.count == 0){
+                self.delegate.networkApiFails(error: "err")
                 return
             }
-            self.delegate.networkApiSuccessful(entry: entry)
-        }
+            self.delegate.networkApiSuccessful(entry: result.entries)
+
+        }).catch({
+            err in
+            self.delegate.networkApiFails(error: "err")
+        })
+
+        //        apiClient.fetchCart(inputJson: Constants.CART_JSON) { (entry, err) in
+        //            if (entry.count == 0){
+        //                self.delegate.networkApiFails(error: err)
+        //                return
+        //            }
+        //
+        ////            apiClient.fetchPromo(inputJson: "") { (promo, err) in
+        ////
+        ////                for (index , value) in entry.enumerated() {
+        ////
+        ////                    if let promoCC = promo.first(where: {$0.type == value.type}){
+        ////                        print(promoCC.type)
+        ////                    }
+        ////                }
+        ////
+        ////            }
+        //            self.delegate.networkApiSuccessful(entry: entry)
+        //        }
     }
 
     func displayPrice(price : String)->NSMutableAttributedString{
