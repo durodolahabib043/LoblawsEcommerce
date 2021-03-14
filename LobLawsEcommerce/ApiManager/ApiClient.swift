@@ -88,22 +88,21 @@ class ApiClient {
 
     func getCartPromise() -> Promise<LoblawsProduct> {
         let urlString = "\(Constants.BASE_URL)\(Constants.CART_JSON)"
-
-        if let url = URL(string: urlString) {
-            return firstly {
-                URLSession.shared.dataTask(.promise, with: url)
-            }.compactMap {
-                return try JSONDecoder().decode(LoblawsProduct.self, from: $0.data)
+        guard let url = URL(string: urlString) else {
+            return Promise {
+                err in
+                let genericError = NSError(
+                    domain: "PromiseKitTutorial",
+                    code: 0,
+                    userInfo: [NSLocalizedDescriptionKey: err])
+                print(err)
+                err.reject(genericError)
             }
-
         }
-        return Promise {
-            err in
-            let genericError = NSError(
-                domain: "PromiseKitTutorial",
-                code: 0,
-                userInfo: [NSLocalizedDescriptionKey: err])
-            err.reject(genericError)
+        return firstly {
+            URLSession.shared.dataTask(.promise, with: url)
+        }.compactMap {
+            return try JSONDecoder().decode(LoblawsProduct.self, from: $0.data)
         }
     }
 

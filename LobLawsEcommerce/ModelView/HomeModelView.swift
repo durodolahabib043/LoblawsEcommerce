@@ -28,6 +28,7 @@ class HomeModelView {
 
         }).catch({
             err in
+            print(err)
             self.delegate.networkApiFails(error: "err")
         })
 
