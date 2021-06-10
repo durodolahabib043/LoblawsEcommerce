@@ -16,17 +16,9 @@ class HomeModelView {
     var delegate : HomeModelViewDelete!
 
     func fetchData(){
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         let apiClient = ApiClient.shared
-        
-=======
-        let apiClient = ApiClient()
->>>>>>> cb74300 ( added search bar)
-=======
-        let apiClient = ApiClient.shared
-        
->>>>>>> 9608d5e ( add singleton)
+
         apiClient.fetchCart(inputJson: Constants.CART_JSON) { [weak self](entry, err) in
             guard let self = self else { return }
             if (entry.count == 0){
